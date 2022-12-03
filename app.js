@@ -6,10 +6,10 @@ Telegram.WebApp.ready();
   Telegram.WebApp.MainButton.show();
 
 
-    Telegram.WebApp.MainButton
-        .setText('CLOSE WEBVIEW')
-        .show()
-        .onClick(function(){ webviewClose(); });
+//     Telegram.WebApp.MainButton
+//         .setText('CLOSE WEBVIEW')
+//         .show()
+//         .onClick(function(){ webviewClose(); });
 
     function toggleMainButton(el) {
         const mainButton = Telegram.WebApp.MainButton;
