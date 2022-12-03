@@ -1,47 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
-</head>
-<body>
 
-	<div class="container">
-		<div class="inner">
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-				<button class="btn" id="btn1">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-			    <button class="btn" id="btn2">Add</button>
-		    </div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-			    <button class="btn" id="btn3">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-				<button class="btn" id="btn4">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-				<button class="btn" id="btn5">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-				<button class="btn" id="btn6">Add</button>
-			</div>
-		</div>
-	</div>
-	<div class="usercard" id="usercard"></div>
-	
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
 
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script src="app.js"></script>
-</body>
+var sendButton = document.createElement('button');
+sendButton.innerHTML = 'Send';
+sendButton.style.position = 'fixed';
+sendButton.style.bottom = '10px';
+sendButton.style.left = '10px';
+sendButton.style.width = '100px';
+sendButton.style.height = '50px';
+sendButton.style.backgroundColor = '#0088cc';
+sendButton.style.color = 'white';
+sendButton.style.borderRadius = '5px';
+sendButton.style.border = 'none';
+sendButton.style.fontSize = '20px';
+sendButton.style.fontWeight = 'bold';
+document.body.appendChild(sendButton);
+
+var receiveButton = document.createElement('button');
+receiveButton.innerHTML = 'Receive';
+receiveButton.style.position = 'fixed';
+receiveButton.style.bottom = '10px';
+receiveButton.style.right = '10px';
+receiveButton.style.width = '100px';
+receiveButton.style.height = '50px';
+receiveButton.style.backgroundColor = '#0088cc';
+receiveButton.style.color = 'white';
+receiveButton.style.borderRadius = '5px';
+receiveButton.style.border = 'none';
+receiveButton.style.fontSize = '20px';
+receiveButton.style.fontWeight = 'bold';
+document.body.appendChild(receiveButton);
+
+sendButton.style.bottom = '60px';
+sendButton.style.left = '45px';
+receiveButton.style.bottom = '60px';
+receiveButton.style.right = '45px';
+
+sendButton.style.bottom = '10px';
+receiveButton.style.bottom = '10px';
+
+sendButton.style.bottom = '45px';
+receiveButton.style.bottom = '45px';
+
+sendButton.addEventListener('mousedown', function() {
+  sendButton.style.backgroundColor = '#006699';
+});
+sendButton.addEventListener('mouseup', function() {
+  sendButton.style.backgroundColor = '#0088cc';
+});
+receiveButton.addEventListener('mousedown', function() {
+  receiveButton.style.backgroundColor = '#006699';
+});
+receiveButton.addEventListener('mouseup', function() {
+  receiveButton.style.backgroundColor = '#0088cc';
+});
+
+var title = document.createElement('div');
+title.innerHTML = 'Your crypto wallet';
+title.style.position = 'fixed';
+title.style.top = '10px';
+title.style.left = '0px';
+title.style.right = '0px';
+title.style.textAlign = 'center';
+title.style.fontSize = '20px';
+title.style.fontWeight = 'bold';
+title.style.color = '#0088cc';
+document.body.appendChild(title);
+
+title.style.fontFamily = 'Helvetica, Arial, sans-serif';
+
+title.style.fontSize = '30px';
+
+title.style.fontSize = '40px';
+
+var description = document.createElement('div');
+description.innerHTML = 'Send, buy and store ETH. Wallet is always available in Telegram.';
+description.style.position = 'fixed';
+description.style.top = '60px';
+description.style.left = '0px';
+description.style.right = '0px';
+description.style.textAlign = 'center';
+description.style.fontSize = '20px';
+description.style.fontWeight = 'bold';
+description.style.color = '#0088cc';
+document.body.appendChild(description);
+
+description.style.fontFamily = 'Helvetica, Arial, sans-serif';
+
+description.style.top = '80px';
+description.style.left = '45px';
+description.style.right = '45px';
+
+var balance = document.createElement('div');
+balance.innerHTML = 'Balance: 0.00 ETH';
+balance.style.position = 'fixed';
+balance.style.top = '150px';
+balance.style.left = '0px';
+balance.style.right = '0px';
+balance.style.textAlign = 'center';
+balance.style.fontSize = '20px';
+balance.style.fontWeight = 'bold';
+balance.style.color = '#0088cc';
+balance.style.border = '1px solid #0088cc';
+balance.style.borderRadius = '5px';
+balance.style.padding = '10px';
+document.body.appendChild(balance);
+
+balance.style.fontFamily = 'Helvetica, Arial, sans-serif';
+balance.style.top = '180px';
+balance.style.left = '45px';
+balance.style.right = '45px';
+
+var coin = document.createElement('img');
+coin.src = 'https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg';
+coin.style.position = 'fixed';
+coin.style.top = '10px';
+coin.style.left = '0px';
+coin.style.right = '0px';
+coin.style.margin = 'auto';
+coin.style.width = '100px';
+coin.style.height = '100px';
+coin.style.opacity = '0.7';
+coin.style.animation = 'ripple 4s linear infinite';
+
+document.body.appendChild(coin);
+
+title.style.top = '120px';
+description.style.top = '180px';
+balance.style.top = '250px';
+});
+        </script>
+    </head>
+    <body style="margin: 0;">
+        <div style="background-color: black; position: fixed; bottom: 0; width: 100%; height: 20px; padding: 20px; opacity: .85; z-index: 1000;">
+            <svg id="Layer_1" data-name="Layer 1" height="40px" width="40px" style="top: -8px;
+            position: relative;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><defs><style>.cls-1{fill:#fff;}</style></defs><title>openai-symbol-flat-white</title><path class="cls-1" d="M617.24,354a126.36,126.36,0,0,0-10.86-103.79,127.8,127.8,0,0,0-137.65-61.32,126.36,126.36,0,0,0-95.31-42.49A127.81,127.81,0,0,0,251.5,234.89,126.4,126.4,0,0,0,167,296.19a127.82,127.82,0,0,0,15.72,149.86,126.36,126.36,0,0,0,10.86,103.79,127.81,127.81,0,0,0,137.65,61.32,126.36,126.36,0,0,0,95.31,42.49A127.81,127.81,0,0,0,548.5,565.11,126.4,126.4,0,0,0,633,503.81,127.82,127.82,0,0,0,617.24,354ZM426.58,620.49a94.79,94.79,0,0,1-60.85-22c.77-.42,2.12-1.16,3-1.7l101-58.34a16.42,16.42,0,0,0,8.3-14.37V381.69l42.69,24.65a1.52,1.52,0,0,1,.83,1.17V525.43A95.18,95.18,0,0,1,426.58,620.49ZM222.34,533.26A94.74,94.74,0,0,1,211,469.56c.75.45,2.06,1.25,3,1.79l101,58.34a16.44,16.44,0,0,0,16.59,0l123.31-71.2v49.3a1.53,1.53,0,0,1-.61,1.31L352.19,568.05A95.16,95.16,0,0,1,222.34,533.26ZM195.77,312.77a94.71,94.71,0,0,1,49.48-41.68c0,.87-.05,2.41-.05,3.48V391.25a16.41,16.41,0,0,0,8.29,14.36L376.8,476.8l-42.69,24.65a1.53,1.53,0,0,1-1.44.13l-102.11-59A95.16,95.16,0,0,1,195.77,312.77Zm350.74,81.62L423.2,323.19l42.69-24.64a1.53,1.53,0,0,1,1.44-.13l102.11,58.95a95.08,95.08,0,0,1-14.69,171.55c0-.88,0-2.42,0-3.49V408.75A16.4,16.4,0,0,0,546.51,394.39ZM589,330.44c-.75-.46-2.06-1.25-3-1.79L485,270.31a16.46,16.46,0,0,0-16.59,0l-123.31,71.2v-49.3a1.53,1.53,0,0,1,.61-1.31L447.81,232A95.07,95.07,0,0,1,589,330.44ZM321.89,418.31l-42.7-24.65a1.52,1.52,0,0,1-.83-1.17V274.57a95.07,95.07,0,0,1,155.9-73c-.77.42-2.11,1.16-3,1.7l-101,58.34a16.41,16.41,0,0,0-8.3,14.36Zm23.19-50L400,336.59l54.92,31.7v63.42L400,463.41l-54.92-31.7Z"/></svg>
+            <div style="display: inline-block; color: white; vertical-align: top; margin-top: 4px; font-family: Helvetica, sans-serif;">
+                Code generated by <a style="color: white; text-decoration: none; font-weight: bold;" href="https://openai.com/blog/openai-codex/">OpenAI Codex</a>
+            </div>
+        </div>
+    </body>
 </html>
-
-<!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
