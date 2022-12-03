@@ -3,19 +3,10 @@ Telegram.WebApp.ready();
     const initData = Telegram.WebApp.initData || '';
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
-    document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
-    document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
-    document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
-    document.querySelector('#themeData').html(JSON.stringify(Telegram.WebApp.themeParams, null, 2));
-
     Telegram.WebApp.MainButton
         .setText('CLOSE WEBVIEW')
         .show()
         .onClick(function(){ webviewClose(); });
-
-    Telegram.WebApp.onEvent('themeChanged', function() {
-        document.querySelector('#themeData').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-    });
 
     function toggleMainButton(el) {
         const mainButton = Telegram.WebApp.MainButton;
